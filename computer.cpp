@@ -1,10 +1,13 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
-extern int a;
 int main()
 {
-    int a, b,c ;//using comma operator
-    b = 30;
-    c = 30;a=b;
-    cout << "the value of a:" << a;
+    int a = 30, b;
+    b = a; // giving a=b gives sematic error
+    cout << setw(25) << "the value of b "<<"="<<setw(4) << b << endl;
+    b = 35;
+    b = a + 2;
+    cout << setw(25) << "value of b "<< "=" << setw(4) << b << endl;
+    return 0;
 }
