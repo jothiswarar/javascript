@@ -5,5 +5,5 @@ int main()
     int a = 30, b;
     b = a; // gives syntax error
     cout<< "value of b :" << a;
-    return 0;
+    
 }
