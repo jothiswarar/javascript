@@ -2,10 +2,10 @@
 #include <conio.h>
 int main()
 {
-    int c = '\xA3'; // Symbol for pounds sterling
-    printf("Character: %c Code: %d \n", c, c);
-    c=getchar();
-    printf("%c",c);
+    char  c[] = "m"; // Symbol for pounds sterling
+    printf("Character: %s Code: %d \n", c, c);
+    gets(c);
+    printf("%s",c);
     getch();
     return 0;
 }
