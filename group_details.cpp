@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-struct group_members {
+struct group_members
+{
     char name[20];
     char subjects[100];
 } group;
@@ -14,7 +15,7 @@ int main()
 }
 void store_file(struct group_members member)
 {
-    FILE *p;
+    FILE *p, *c;
     char name_of[20], subjects_he[100];
     p = fopen("group_member.txt", "a+");
     puts("enter name of person(first letter in capital):");
@@ -30,6 +31,13 @@ void store_file(struct group_members member)
     fputs(member.subjects, p);
     fprintf(p, ".\n");
     fclose(p);
+    c = fopen("group_member.csv", "a+");
+    fputs("Name of the person:\n", c);
+    fputs(member.name, c);
+    fputs("\nSubjects he do well:\n", c);
+    fputs(member.subjects, c);
+    fprintf(c, "\n");
+    fclose(c);
 }
 void printdetails(struct group_members *member)
 {
