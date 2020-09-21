@@ -7,7 +7,7 @@ struct group_members
     char subjects[100];
 } group;
 void store_file(struct group_members member);
-void printdetails(struct group_members *member);
+inline printdetails(struct group_members *member);
 int main()
 {
     store_file(group);
@@ -43,7 +43,7 @@ void store_file(struct group_members member)
     fprintf(c, "\n");
     fclose(c);}
 }
-void printdetails(struct group_members *member)
+inline printdetails(struct group_members *member)
 {
     puts(member->name);
     puts(member->subjects);
