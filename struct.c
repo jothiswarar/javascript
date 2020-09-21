@@ -27,9 +27,10 @@ void store_file(struct group_member member){
     strcpy(member.name, nameof);
     strcpy(member.subject, subjectcan);
     printmember_details(&member);
-    fputs("\nname of the person:\n", group_memberfile);
+    fputs("Name of the person:\n", group_memberfile);
     fputs(member.name, group_memberfile);
-    fputs("\nsubjects he do well:\n", group_memberfile);
+    fputs(".\nSubjects he do well:\n", group_memberfile);
     fputs(member.subject,group_memberfile);
+    fprintf(group_memberfile,".\n");
     fclose(group_memberfile);
 }
