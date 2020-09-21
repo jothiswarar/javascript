@@ -6,3 +6,7 @@ Name of the person:
 Monish.
 Subjects he do well:
 tamil,eng,math.
+Name of the person:
+Dhanush.
+Subjects he do well:
+tamil,physics,chemistry.

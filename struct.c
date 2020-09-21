@@ -20,9 +20,9 @@ void store_file(struct group_member member){
     FILE *group_memberfile,*c;
     char nameof[25], subjectcan[100];
     group_memberfile=fopen("group_member.txt","a+");
-    printf("enter name of person(first letter in capital):");
+    printf("enter name of person(first letter in capital):\n");
     gets(nameof);
-    printf("enter all the subject he do very well (use ,):");
+    printf("enter all the subject he do very well (use ,):\n");
     gets(subjectcan);
     strcpy(member.name, nameof);
     strcpy(member.subject, subjectcan);
