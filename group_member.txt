@@ -6,3 +6,12 @@ Name of the person:
 Monish.
 Subjects he do well:
 tamil,english,maths,physics.
+Name of the person:
+Arun.
+Subjects he do well:
+all subjects.
+
+Name of the person:
+Nandha.
+Subjects he do well:
+tamil,english,maths,physics,chemistry,computer science.

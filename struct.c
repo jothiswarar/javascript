@@ -17,7 +17,7 @@ int main()
     return 0;
 }
 void store_file(struct group_member member){
-    FILE *group_memberfile;
+    FILE *group_memberfile,*c;
     char nameof[25], subjectcan[100];
     group_memberfile=fopen("group_member.txt","a+");
     printf("enter name of person(first letter in capital):");
@@ -33,4 +33,11 @@ void store_file(struct group_member member){
     fputs(member.subject,group_memberfile);
     fprintf(group_memberfile,".\n");
     fclose(group_memberfile);
+    c = fopen("group_members.csv", "a+");
+    fputs("Name of the person:\n", c);
+    fputs(member.name, c);
+    fputs("\nSubjects he do well:\n", c);
+    fputs(member.subject, c);
+    fprintf(c, "\n");
+    fclose(c);
 }
