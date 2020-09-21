@@ -32,12 +32,16 @@ void store_file(struct group_members member)
     fprintf(p, ".\n");
     fclose(p);
     c = fopen("group_member.csv", "a+");
+    if(c==NULL){
+        cout<<"there is a error in writing the file";
+    }
+    else{
     fputs("Name of the person:\n", c);
     fputs(member.name, c);
     fputs("\nSubjects he do well:\n", c);
     fputs(member.subjects, c);
     fprintf(c, "\n");
-    fclose(c);
+    fclose(c);}
 }
 void printdetails(struct group_members *member)
 {

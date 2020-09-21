@@ -33,11 +33,15 @@ void store_file(struct group_member member){
     fputs(member.subject,group_memberfile);
     fprintf(group_memberfile,".\n");
     fclose(group_memberfile);
-    c = fopen("group_members.csv", "a+");
+    c = fopen("group_member.csv", "a+");
+    if (c==NULL){
+        printf ("there is a error in writing the file");
+    }
+    else{
     fputs("Name of the person:\n", c);
     fputs(member.name, c);
     fputs("\nSubjects he do well:\n", c);
     fputs(member.subject, c);
     fprintf(c, "\n");
-    fclose(c);
+    fclose(c);}
 }
