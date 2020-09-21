@@ -19,16 +19,17 @@ int main()
 void store_file(struct group_member member){
     FILE *group_memberfile;
     char nameof[25], subjectcan[100];
-    group_memberfile=fopen("group_member.txt","w+");
-    printf("enter name of person:");
+    group_memberfile=fopen("group_member.txt","a+");
+    printf("enter name of person(first letter in capital):");
     gets(nameof);
     printf("enter all the subject he do very well (use ,):");
     gets(subjectcan);
     strcpy(member.name, nameof);
     strcpy(member.subject, subjectcan);
     printmember_details(&member);
+    fputs("\nname of the person:\n", group_memberfile);
     fputs(member.name, group_memberfile);
-    fputs("\n", group_memberfile);
+    fputs("\nsubjects he do well:\n", group_memberfile);
     fputs(member.subject,group_memberfile);
     fclose(group_memberfile);
 }

@@ -1,2 +1,0 @@
-arun
-tamil,english,maths,physics,chemistry,computer science
