@@ -38,7 +38,7 @@ void store_file(struct group_member member)
     else
     {
 
-        fputs("date modified or added:", c);
+        fputs("date modified or added:", group_memberfile);
         fputs(__DATE__, group_memberfile);
         fprintf(group_memberfile, ".\n");
         fputs("Name of the person:\n", group_memberfile);
@@ -55,7 +55,7 @@ void store_file(struct group_member member)
     }
     else
     {
-        fputs("date modified or added:", c);
+        fputs("Date modified or added:", c);
         fputs(__DATE__, c);
         fprintf(c, "\n");
         fputs("Name of the person:\n", c);
@@ -81,12 +81,14 @@ void read_file(struct group_member member)
     puts("how lines you want to read the txt file\n");
     scanf("%d", &a);
     p = fopen(file_name_txt, "a+");
+    printf("TXT file:\n");
     for (int n = a; n != 0; n--)
     {
         fgets(file, 1000, (FILE *)p);
         printf("%s", file);
     }
     c = fopen(file_name_csv, "a+");
+    printf("CSV file:\n");
     for (int n = a; n != 0; n--)
     {
         fgets(file, 1000, (FILE *)c);

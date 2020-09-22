@@ -1,5 +1,5 @@
 #include <iostream>
-#include "write_files.c"
+#include "old_file.c"
 int main()
 {
 
@@ -12,8 +12,8 @@ int main()
         store_file(group);
         break;
     case 'r':
-        read_filetxt(group);
-        read_filecsv(group);
+        read_file(group);
+        //read_filecsv(group);
         break;
     default:
         puts("enter only w or r");

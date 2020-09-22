@@ -12,7 +12,7 @@ struct group_member //defining the structure variable
 {
     char name[25];
     char subject[100];
-    char date[15] = __DATE__;
+    //char date[15] = __DATE__;
 } group; // structure variable is group
 
 void read_filetxt(struct group_member member)
@@ -56,20 +56,29 @@ void store_file(struct group_member member)
 {
     FILE *group_memberfile, *c;
     char nameof[25], subjectcan[100];
-    group_memberfile = fopen("group_details.txt", "a+");
+    group_memberfile = fopen("group_details.txt", "a+"); //w-write,r-read,a-append
     printf("enter name of person(first letter in capital):\n");
     gets(nameof);
     printf("enter all the subject he do very well (use ,):\n");
     gets(subjectcan);
     strcpy(member.name, nameof);
     strcpy(member.subject, subjectcan);
-    printmember_details(&member);
-    fputs("Name of the person:\n", group_memberfile);
-    fputs(member.name, group_memberfile);
-    fputs(".\nSubjects he do well:\n", group_memberfile);
-    fputs(member.subject, group_memberfile);
-    fprintf(group_memberfile, ".\n");
-    fclose(group_memberfile);
+    printmember_details(&member); //calling function print details
+    if (group_memberfile == NULL)
+    {
+        printf("error in opening file");
+    }
+    else
+    {
+        fputs("date modified or added:", c);
+        fputs(__DATE__, c);
+        fputs("Name of the person:\n", group_memberfile);
+        fputs(member.name, group_memberfile);
+        fputs(".\nSubjects he do well:\n", group_memberfile);
+        fputs(member.subject, group_memberfile);
+        fprintf(group_memberfile, ".\n");
+        fclose(group_memberfile);
+    }
     c = fopen("group_details.csv", "a+");
     if (c == NULL)
     {
