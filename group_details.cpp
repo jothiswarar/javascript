@@ -26,7 +26,7 @@ void store_file(struct group_members member)
     strcpy(member.subjects, subjects_he);
     printdetails(&member);
     cout << "in which format you want ?\navaliable format .txt and.csv\n";
-    cin >> a;
+    gets(a);
     if (a =="txt")
     {
         p = fopen("group_member.txt", "a+");
@@ -49,7 +49,7 @@ void store_file(struct group_members member)
         c = fopen("group_member.csv", "a+");
         if (c == NULL)
         {
-            cout << "there is a error in writing the file";
+            cout << "there is a error in opening the file";
         }
         else
         {
