@@ -1,48 +1,52 @@
 #include <iostream>
-#include <string.h>
-using namespace std;
-struct group_members
-{
-    char name[20];
-    char subjects[100];
-} group;
-void store_file(struct group_members member);
-void printdetails(struct group_members *member);
+#include "struct.c"
 int main()
 {
-    store_file(group);
+
+    puts("you want read or write (w-write/r-read)");
+    char wr = getchar();
+    //char txt_csv[20];
+    switch (wr)
+    {
+    case 'w':
+        store_filetxt(group);
+        store_filecsv(group);
+        break;
+    case 'r':
+        read_filetxt(group);
+        read_filecsv(group);
+        break;
+    default:
+        printf("enter only w or r");
+    }
+//getc();
     return 0;
 }
-void store_file(struct group_members member)
+void store_filetxt(struct group_member member)
 {
-    FILE *p, *c;
-    char name_of[20], subjects_he[100], a[50];
-    puts("enter name of person(first letter in capital):");
-    gets(name_of);
-    puts("enter all the subject he do very well (use ,):");
-    gets(subjects_he);
-    strcpy(member.name, name_of);
-    strcpy(member.subjects, subjects_he);
-    printdetails(&member);
-    puts("enter the file name with extension");
-    gets(a);
-    p = fopen(a, "a+");
+    FILE *c;
+    char nameof[25], subjectcan[100];
+    char file_name_txt[50] = "group_details.txt";
+    puts("enter name of person(first letter in capital):\n");
+    gets(nameof);
+    printf("enter all the subject he do very well (use ,):\n");
+    gets(subjectcan);
+    strcpy(member.name, nameof);
+    strcpy(member.subject, subjectcan);
+    printmember_details(&member);
+
+    c = fopen(file_name_txt, "a+");
     if (c == NULL)
     {
-        cout << "there is a error in writing the file";
+        printf("there is a error in writing the file");
     }
     else
     {
-        fputs("Name of the person:\n", p);
-        fputs(member.name, p);
-        fputs(".\nSubjects he do well:\n", p);
-        fputs(member.subjects, p);
-        fprintf(p, ".\n");
-        fclose(p);
+        fputs("Name of the person:\n", c);
+        fputs(member.name, c);
+        fputs("\nSubjects he do well:\n", c);
+        fputs(member.subject, c);
+        fprintf(c, "\n");
+        fclose(c);
     }
-}
-void printdetails(struct group_members *member)
-{
-    puts(member->name);
-    puts(member->subjects);
 }
