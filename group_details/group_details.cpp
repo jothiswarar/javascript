@@ -9,8 +9,7 @@ int main()
     switch (wr)
     {
     case 'w':
-        store_filetxt(group);
-        store_filecsv(group);
+        store_file(group);
         break;
     case 'r':
         read_filetxt(group);
