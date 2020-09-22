@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h> //provides thefunction strcpy for this program
+//#include "read_files.c"
 
 struct group_member;
 extern void store_filetxt(struct group_member member); // declaring the function with global scope to use in another file

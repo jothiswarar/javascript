@@ -1,3 +1,4 @@
+#include <stdio.h>
 void read_filetxt(struct group_member member)
 {
     char file_name_txt[50] = "group_details.txt";

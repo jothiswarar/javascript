@@ -1,11 +1,16 @@
 #include <iostream>
-#include "struct.c"
+#include "read_files.c"
+#include "write_files.c"
+using namespace std;
 int main()
 {
 
     puts("you want read or write (w-write/r-read)");
     char wr = getchar();
-    //char txt_csv[20];
+    char file_name[4];
+    cout << "enter the file extension";
+    cin >> file_name;
+
     switch (wr)
     {
     case 'w':
@@ -19,6 +24,6 @@ int main()
     default:
         printf("enter only w or r");
     }
-//getc();
+
     return 0;
 }
