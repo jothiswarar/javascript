@@ -11,6 +11,7 @@ struct group_member //defining the structure variable
 {
     char name[25];
     char subject[100];
+    char date[15]=__DATE__;
 } group; // structure variable is group
 
 void read_filetxt(struct group_member member)
@@ -74,6 +75,9 @@ void store_filecsv(struct group_member member)
         fputs("\nSubjects he do well:\n", c);
         fputs(member.subject, c);
         fprintf(c, "\n");
+        fputs("time added:\n",c);
+        fputs(member.date,c);
+        fprintf(c, "\n");
         fclose(c);
     }
 }
@@ -97,10 +101,13 @@ void store_filetxt(struct group_member member)
     }
     else
     {
-        fputs("Name of the person:\n", c);
+        fprintf(c,"Name of the person:\n");
         fputs(member.name, c);
-        fputs("\nSubjects he do well:\n", c);
+        fprintf(c,"\nSubjects he do well:\n");
         fputs(member.subject, c);
+        fprintf(c, "\n");
+        fputs("time added:\n", c);
+        fputs(member.date, c);
         fprintf(c, "\n");
         fclose(c);
     }
